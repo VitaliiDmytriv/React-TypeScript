@@ -1,14 +1,11 @@
-import './App.css';
-import { Alert } from './Alert';
+import { Outlet } from 'react-router';
+import { Header } from './Header';
 
-function App() {
+export default function App() {
     return (
-        <div className="App">
-            <Alert closable heading="Success">
-                Everything is really good!
-            </Alert>
-        </div>
+        <>
+            <Header />
+            <Outlet />
+        </>
     );
 }
-
-export default App;
