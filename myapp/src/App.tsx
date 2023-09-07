@@ -1,12 +1,12 @@
+import { AlertTailwind } from './AlertTailwind';
 import './App.css';
-import { Alert } from './Alert';
 
 function App() {
     return (
-        <div className="App">
-            <Alert closable heading="Success">
+        <div className="container">
+            <AlertTailwind closable heading="Success">
                 Everything is really good!
-            </Alert>
+            </AlertTailwind>
         </div>
     );
 }
