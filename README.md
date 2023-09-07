@@ -120,3 +120,52 @@ const addButtonRef = useRef<HTMLButtonElement>(null);
 To recap, the useRef Hook creates a mutatable value and doesn’t cause a re-render when changed. It is commonly used to access HTML elements in React imperatively.
 
 ### useMemo
+
+The memo Hook creates a memoized value and is beneficial for values that have computationally expensive calculations.
+
+```
+const memoizedValue = useMemo(() => expensiveCalculation(),[]);
+
+```
+
+The second argument passed to useMemo is an array of dependencies. So, if the
+expensiveCalculation function has dependencies a and b, the call will be as follows:
+
+```
+const memoizedValue = useMemo(
+    () => expensiveCalculation(a, b),
+    [a, b]
+);
+```
+
+When any dependencies change, the function in the first argument is executed again to return a new value to memoize. In the previous example, a new version of memoizedValue is created every time a or b changes.
+
+The type of the memoized value is inferred but can be explicitly defined in a generic parameter on useMemo
+
+```
+const memoizedValue = useMemo<number>(
+    () => expensiveCalculation(),
+    []
+);
+```
+
+```
+const expensiveCalculation = sillyExpensiveFunction();
+
+return (
+    ...
+    <p>{expensiveCalculation}</p>
+    ...
+)
+```
+
+Refresh the browser containing the app and click the buttons. If you look in the console, you will see that the expensive function is executed every time the component is re-rendered after a button click.
+
+```
+const expensiveCalculation = useMemo(() => sillyExpensiveFunction(), []);
+```
+
+The useMemo Hook is used to memoize the value from the function call.
+Refresh the browser containing the running app and click the buttons. If you look in the console, you will see that the expensive function isn’t executed when the buttons are clicked because the memoized value is used instead.
+
+### Callback Hook
