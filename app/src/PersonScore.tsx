@@ -1,5 +1,6 @@
-import { useEffect, useReducer, useRef, useMemo } from "react";
+import { useEffect, useReducer, useRef, useMemo, useCallback } from "react";
 import { getPerson } from "./getPerson";
+import { Reset } from "./Reset";
 
 function sillyExpensiveFunction() {
     console.log("Executing silly function");
@@ -69,6 +70,8 @@ function PersonScore() {
 
     const expensiveCalculation = useMemo(() => sillyExpensiveFunction(), []);
 
+    const handleReset = useCallback(() => dispatch({ type: "reset" }), []);
+
     if (loading) {
         return <div>Loading ...</div>;
     }
@@ -88,7 +91,7 @@ function PersonScore() {
             <button onClick={() => dispatch({ type: "decrement" })}>
                 Subtract
             </button>
-            <button onClick={() => dispatch({ type: "reset" })}>Rest</button>
+            <Reset onClick={handleReset} />
         </div>
     );
 }
