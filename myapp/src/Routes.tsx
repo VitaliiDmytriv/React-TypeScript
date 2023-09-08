@@ -3,8 +3,9 @@ import { ProductsPage } from './pages/ProductsPage';
 import { ProductPage } from './pages/ProductPage';
 import { ErrorPage } from './pages/ErrorPage';
 import { HomePage } from './pages/HomePage';
-
 import App from './App';
+import { lazy, Suspense } from 'react';
+const AdminPage = lazy(() => import('./pages/AdminPage'));
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,20 @@ const router = createBrowserRouter([
             {
                 path: 'products/:id',
                 element: <ProductPage />,
+            },
+            {
+                path: 'admin',
+                element: (
+                    <Suspense
+                        fallback={
+                            <div className="text-center p-5 text-xl text-slate-500">
+                                Loading ...
+                            </div>
+                        }
+                    >
+                        <AdminPage />
+                    </Suspense>
+                ),
             },
         ],
     },

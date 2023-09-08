@@ -94,3 +94,34 @@ The navigate variable is a function that can be used to navigate. It takes in an
 So, programmatic navigation is achieved using the useNavigate hook. This returns a function that can navigate to the path passed into it.
 
 ### form navigation
+
+### lazy loading
+
+There are two main steps to lazy loading React components. First, the component must be dynamically imported as follows:
+
+```
+const LazyPage = lazy(() => import('./LazyPage'));
+```
+
+In the code block, lazy is a function from React that enables the imported component to be lazilyloaded. Note that the lazy page must be a default export – lazy loading doesn’t work with named exports.
+
+The second step is to render the lazy component inside React’s Suspense component as follows:
+
+```
+<Route
+    path="lazy"
+    element={
+        <Suspense fallback={<div>Loading…</div>}>
+            <LazyPage />
+        </Suspense>
+    }
+/>
+```
+
+1. <CustomersPage /> | <ErrorPage />
+2. '/customers/:id"
+3. <Outlet/>
+4. <NavLink></NavLink>
+5. const params = useParams<{userId: string}>();
+6.
+7. <Suspense><Suspense>
