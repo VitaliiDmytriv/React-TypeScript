@@ -78,3 +78,17 @@ The submit handler parameter is typed using FormEvent. FormEvent is a generic ty
 We use the JavaScript FormData interface to get the value of the search field. Then, we use a type assertion to set the type of the search field value to a string.
 
 The last line of code in the submit handler sets the value of the search parameter. This will update the browser’s URL to have this search parameter.
+
+### useNavigate
+
+The useNavigate hook returns a function we can use to perform programmatic navigation.
+
+```
+const navigate = useNavigate();
+```
+
+The navigate variable is a function that can be used to navigate. It takes in an argument for the path to navigate to.
+
+So, programmatic navigation is achieved using the useNavigate hook. This returns a function that can navigate to the path passed into it.
+
+### form navigation
