@@ -81,6 +81,8 @@ The last line of code in the submit handler sets the value of the search paramet
 
 ### useNavigate
 
+`on ReactRouter кажуть що краще використовувати redirect`
+
 The useNavigate hook returns a function we can use to perform programmatic navigation.
 
 ```
