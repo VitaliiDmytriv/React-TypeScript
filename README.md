@@ -21,6 +21,20 @@ let flag = false;
 the unknown type is an excellent choice for data whose type you are unsure about.
 However, you can’t interact with unknown variables – the variable must be widened to a different type before any interaction.
 
+```
+fetch("https://swapi.dev/api/people/1")
+    .then((response) => response.json())
+    .then((data: unknown) => {
+        if (isCharacter(data)) {
+            console.log("name", data.name);
+        }
+    });
+
+function isCharacter(character: any): character is { name: string } {
+    return "name" in character;
+}
+```
+
 ### Recap
 
 -   TypeScript adds many useful types to JavaScripts types, such as `Date`, and is capable of representing arrays.
