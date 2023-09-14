@@ -12,9 +12,10 @@ export type User = {
     posts: PostData[];
 };
 
-export type AuthorizeUser = {
+// export type AuthorizeUser = {
+export type TryToAuthUser = {
     email: string;
     password: string;
 };
 
-export type isAuthUser = 'Invalid email' | 'Invalid password' | User | undefined;
+export type isAuthUser = 'Invalid email' | 'Invalid password' | User;

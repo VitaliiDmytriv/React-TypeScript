@@ -1,4 +1,4 @@
-import { User, AuthorizeUser, isAuthUser } from '../types';
+import { User } from '../types';
 
 const usersUrl = 'http://localhost:3001/users/';
 
@@ -32,29 +32,4 @@ export function assertIsUsers(users: unknown): asserts users is User[] {
             throw new Error('email is not a string');
         }
     });
-}
-
-export function isAuthorized(userAuth: AuthorizeUser, users: User[]): isAuthUser {
-    let isEmail = false;
-    let isPassword = false;
-    let authorizedUser;
-    users.forEach((user) => {
-        if (user.email === userAuth.email) {
-            isEmail = true;
-            if (user.password === userAuth.password) {
-                isPassword = true;
-                authorizedUser = user as User;
-            }
-        }
-    });
-
-    if (!isEmail) {
-        return 'Invalid email';
-    }
-    if (isEmail && !isPassword) {
-        return 'Invalid password';
-    }
-    if (isEmail && isPassword) {
-        return authorizedUser;
-    }
 }

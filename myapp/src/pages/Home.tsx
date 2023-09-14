@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { PostData } from '../types';
-import { getPosts } from '../posts/getPosts';
+import { getPosts } from '../utils/getPosts';
 import { useUserContext } from '../UserContext';
 import { Link } from 'react-router-dom';
 

@@ -27,8 +27,9 @@ code {
 .input {
     background-color: rgba(255, 255, 255, 0.102);
     backdrop-filter: blur(10px);
-    border: none;
+    /* border: none; */
     border-radius: 0.3rem;
+    outline: none;
 }
 
 /* Change Autocomplete styles in Chrome*/
