@@ -6,13 +6,13 @@ type Props = {
 };
 
 type State = {
-    user: User | undefined;
+    user: User | null;
 };
 
 type Action =
     | {
           type: 'authenticated';
-          user: User | undefined;
+          user: User | null;
       }
     | {
           type: 'leave';
@@ -22,8 +22,10 @@ type UserContextType = State & {
     dispatch: React.Dispatch<Action>;
 };
 
+const currentUser = localStorage.getItem('currentUser');
+
 const initialState: State = {
-    user: undefined,
+    user: currentUser ? JSON.parse(currentUser) : null,
 };
 
 const userContext = createContext<UserContextType>({
@@ -36,7 +38,7 @@ function reducer(state: State, action: Action): State {
         case 'authenticated':
             return { user: action.user };
         case 'leave':
-            return { user: undefined };
+            return { user: null };
         default:
             return state;
     }

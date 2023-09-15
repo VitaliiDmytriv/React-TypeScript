@@ -52,3 +52,7 @@ select:-webkit-autofill:focus {
     fill: #fff;
     color: #fff;
 }
+
+.post {
+    background-color: #ffffff4e;
+}

@@ -29,6 +29,7 @@ function Authorize() {
         } else {
             setShowAuthError(false);
             dispatch({ type: 'authenticated', user: isAuth });
+            localStorage.setItem('currentUser', JSON.stringify(isAuth));
             navigate('/');
         }
     }
