@@ -4,6 +4,7 @@ import { getPosts } from '../utils/getPosts';
 import { useUserContext } from '../UserContext';
 import { Link } from 'react-router-dom';
 import { PostList } from '../Components/PostList';
+import { useCurrentUrl } from '../hooks/useCurrentUrl';
 
 function Home() {
     const [posts, setPosts] = useState<PostData[]>([]);

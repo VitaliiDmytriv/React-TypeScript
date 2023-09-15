@@ -3,6 +3,7 @@ export type PostData = {
     title: string;
     description: string;
     author: string;
+    date: number;
 };
 
 export type User = {

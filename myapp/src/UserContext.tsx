@@ -1,5 +1,6 @@
 import { ReactNode, createContext, useContext, useReducer } from 'react';
 import { User } from './types';
+import { useCurrentUrl } from './hooks/useCurrentUrl';
 
 type Props = {
     children: ReactNode;

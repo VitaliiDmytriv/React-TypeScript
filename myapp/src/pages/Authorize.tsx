@@ -20,6 +20,9 @@ function Authorize() {
     const { dispatch } = useUserContext();
     const navigate = useNavigate();
 
+    const url = window.location.href;
+    console.log(url);
+
     async function onSubmit(tryToAuthUser: TryToAuthUser) {
         const users = await getUsers();
         const isAuth = isAuthorized(tryToAuthUser, users);
