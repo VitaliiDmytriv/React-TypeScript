@@ -1,7 +1,7 @@
 import { useForm, FieldError } from 'react-hook-form';
 import { TryToAuthUser } from '../types';
 import { getUsers } from '../utils/getUsers';
-import spinner from '../bars-rotate-fade.svg';
+import spinner from '../assets/bars-rotate-fade.svg';
 import { useState } from 'react';
 import { useUserContext } from '../UserContext';
 import { useNavigate } from 'react-router-dom';
@@ -19,9 +19,6 @@ function Authorize() {
     const [AuthErrorMessage, setAuthErrorMessage] = useState('');
     const { dispatch } = useUserContext();
     const navigate = useNavigate();
-
-    const url = window.location.href;
-    console.log(url);
 
     async function onSubmit(tryToAuthUser: TryToAuthUser) {
         const users = await getUsers();

@@ -15,7 +15,7 @@ code {
 }
 
 .bg {
-    background-image: url('./bg.webp');
+    background-image: url('./assets/bg.webp');
     background-position: 40% 50%;
 }
 
