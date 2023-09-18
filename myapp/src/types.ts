@@ -7,7 +7,7 @@ export type PostData = {
 };
 
 export type User = {
-    id: number;
+    id: string;
     login: string;
     email: string;
     password: string;
@@ -21,3 +21,19 @@ export type TryToAuthUser = {
 };
 
 export type isAuthUser = 'Invalid email' | 'Invalid password' | User;
+
+export type RegisterUser = {
+    email: string;
+    login: string;
+    password: string;
+    password2: string;
+};
+
+export enum Cache {
+    posts = 'posts',
+    users = 'users',
+}
+
+export enum Url {
+    users = 'http://localhost:3001/users/',
+}

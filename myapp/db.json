@@ -3,28 +3,28 @@
         {
             "title": "Getting started with fetch",
             "description": "How to interact with backend APIs using fetch",
-            "id": 1,
+            "id": "1",
             "author": "zaj",
             "date": 1693208120400
         },
         {
             "title": "Getting started with useEffect",
             "description": "How to use React's useEffect hook for interacting with backend APIs",
-            "id": 2,
+            "id": "2",
             "author": "vETaJLko",
             "date": 1694200120400
         },
         {
             "title": "Getting started with useEffect",
             "description": "How to use React's useEffect hook for interacting with backend APIs",
-            "id": 3,
+            "id": "3",
             "author": "unknown",
             "date": 1694420120400
         }
     ],
     "users": [
         {
-            "id": 1,
+            "id": "1",
             "login": "zaj",
             "password": "1234",
             "email": "vitaliqq.dmutriv@gmail.com",
@@ -32,14 +32,14 @@
                 {
                     "title": "Getting started with fetch",
                     "description": "How to interact with backend APIs using fetch",
-                    "id": 1,
+                    "id": "1",
                     "login": "zaj",
                     "date": 1693208120400
                 }
             ]
         },
         {
-            "id": 2,
+            "id": "2",
             "login": "vETaJLko",
             "password": "4321",
             "email": "vitalik_dd@ukr.net",
@@ -47,7 +47,7 @@
                 {
                     "title": "Getting started with fetch",
                     "description": "How to interact with backend APIs using fetch",
-                    "id": 1,
+                    "id": "1",
                     "author": "vETaJLko",
                     "date": 1694200120400
                 }

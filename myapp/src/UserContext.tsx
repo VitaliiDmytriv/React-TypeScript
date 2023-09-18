@@ -46,9 +46,6 @@ function reducer(state: State, action: Action): State {
 }
 
 export function UserProvider({ children }: Props) {
-    const url = useCurrentUrl();
-    console.log(url);
-
     const [{ user }, dispatch] = useReducer(reducer, initialState);
 
     return <userContext.Provider value={{ user, dispatch }}>{children}</userContext.Provider>;

@@ -4,27 +4,21 @@ import { getPosts } from '../utils/getPosts';
 import { useUserContext } from '../UserContext';
 import { Link } from 'react-router-dom';
 import { PostList } from '../Components/PostList';
-import { useCurrentUrl } from '../hooks/useCurrentUrl';
 import { cache } from '../cache';
 
 function Home() {
     const [posts, setPosts] = useState<PostData[]>([]);
     const { user, dispatch } = useUserContext();
-    const currentUrl = useCurrentUrl();
 
     useEffect(() => {
         let cancel = false;
+        console.log(cache);
 
-        if (cache.has(currentUrl)) {
-            setPosts(cache.get(currentUrl));
-        } else {
-            getPosts().then((data) => {
-                if (!cancel) {
-                    setPosts(data);
-                    cache.set(currentUrl, data);
-                }
-            });
-        }
+        getPosts().then((data) => {
+            if (!cancel) {
+                setPosts(data);
+            }
+        });
 
         return () => {
             cancel = true;
