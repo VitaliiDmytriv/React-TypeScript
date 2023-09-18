@@ -43,3 +43,12 @@ In a terminal, start the API by running the script we just created, as follows:
 ```
 npm run server
 ```
+
+We will now quickly recap what we have learned with React Router’s data-fetching capabilities:
+
+-   React Router’s loader allows us to efficiently load fetched data into a route component
+-   React Router’s defer allows the route component not to be blocked from rendering the
+    component while data is being fetched
+-   React Router’s useLoaderData hook allows a component to access a route’s loader data
+-   React’s Suspense and React Router’s Await allow a component to render while data is still
+    being fetched

@@ -1,5 +1,4 @@
-import './App.css';
-import { PostPage } from './posts/PostPage';
+import { PostPage } from './PostPage';
 
 function App() {
     return <PostPage />;
