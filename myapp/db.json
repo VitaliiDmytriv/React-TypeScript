@@ -1,29 +1,14 @@
 {
-  "posts": [
-    {
-      "title": "Getting started with fetch",
-      "description": "How to interact with backend APIs using fetch",
-      "id": 1
-    },
-    {
-      "title": "Getting started with useEffect",
-      "description": "How to use React's useEffect hook for interacting with backend APIs",
-      "id": 2
-    },
-    {
-      "title": "dasdas",
-      "description": "dasdas",
-      "id": 3
-    },
-    {
-      "title": "123",
-      "description": "asdffgwe dq",
-      "id": 4
-    },
-    {
-      "title": "Suspense & Await",
-      "description": "some description",
-      "id": 5
-    }
-  ]
+    "posts": [
+        {
+            "title": "Getting started with fetch",
+            "description": "How to interact with backend APIs using fetch",
+            "id": 1
+        },
+        {
+            "title": "Getting started with useEffect",
+            "description": "How to use React's useEffect hook for interacting with backend APIs",
+            "id": 2
+        }
+    ]
 }

@@ -44,6 +44,8 @@ In a terminal, start the API by running the script we just created, as follows:
 npm run server
 ```
 
+### Deferred React Router data fetching
+
 We will now quickly recap what we have learned with React Router’s data-fetching capabilities:
 
 -   React Router’s loader allows us to efficiently load fetched data into a route component
@@ -52,3 +54,11 @@ We will now quickly recap what we have learned with React Router’s data-fetchi
 -   React Router’s useLoaderData hook allows a component to access a route’s loader data
 -   React’s Suspense and React Router’s Await allow a component to render while data is still
     being fetched
+
+### Using React Query
+
+One thing that it React Query does that React Router doesn’t is that it maintains
+a cache of the fetched data, which improves the perceived performance of an app.
+
+React Query can update data using a feature called mutations using a useMutation hook
+https://tanstack.com/query/v3/docs/react/quick-start
