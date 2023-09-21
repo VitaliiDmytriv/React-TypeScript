@@ -62,3 +62,22 @@ a cache of the fetched data, which improves the perceived performance of an app.
 
 React Query can update data using a feature called mutations using a useMutation hook
 https://tanstack.com/query/v3/docs/react/quick-start
+
+### Using React Router with React Query
+
+So far, we have experienced the benefits of both React Router and React Query data fetching. React Router reduces the number of re-renders, while React Query provides a client-side cache of the data. In this section, we will use these libraries together in our app so that it has both these benefits.
+
+1. Async func
+2. написати assert function
+   export function assertIsFirstName(data: unknown): asserts data is string[] {
+   if (!Array.isArray(data)) {
+   throw new Error();
+   }
+   data.forEach((str) => {
+   if (typeof str !== 'string') {
+   throw new Error('dasd');
+   }
+   });
+   }
+3. 'PUT'
+4.
