@@ -45,7 +45,7 @@ export function Registration({ handleClick }: Props) {
     const fieldStyle = 'flex flex-col mb-2';
     return (
         <>
-            {true && (
+            {isSubmitSuccessful && (
                 <MyModal>
                     <h4>You've succesfully created acount!</h4>
                     <div className="text-center">

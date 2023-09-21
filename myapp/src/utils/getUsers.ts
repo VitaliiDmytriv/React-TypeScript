@@ -6,7 +6,6 @@ const usersUrl = 'http://localhost:3001/users/';
 export async function getUsers() {
     if (cache.has(Cache.users)) {
         return new Promise<User[]>((resolve) => {
-            // setTimeout(() => resolve(cache.get(Cache.users)), 300);
             resolve(cache.get(Cache.users));
         });
     }

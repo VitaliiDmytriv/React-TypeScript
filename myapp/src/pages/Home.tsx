@@ -1,29 +1,12 @@
-import { useState, useEffect } from 'react';
-import { PostData } from '../types';
 import { getPosts } from '../utils/getPosts';
 import { useUserContext } from '../UserContext';
 import { Link } from 'react-router-dom';
 import { PostList } from '../Components/PostList';
-import { cache } from '../cache';
+import { useQuery } from '@tanstack/react-query';
 
 function Home() {
-    const [posts, setPosts] = useState<PostData[]>([]);
     const { user, dispatch } = useUserContext();
-
-    useEffect(() => {
-        let cancel = false;
-        console.log(cache);
-
-        getPosts().then((data) => {
-            if (!cancel) {
-                setPosts(data);
-            }
-        });
-
-        return () => {
-            cancel = true;
-        };
-    }, []);
+    const { isLoading, data: posts } = useQuery(['posts'], getPosts);
 
     function handleExit() {
         localStorage.removeItem('currentUser');
@@ -48,7 +31,11 @@ function Home() {
                 </span>
             </header>
             <section>
-                {posts.length !== 0 ? <PostList posts={posts} /> : <div>Loading...</div>}
+                {isLoading || posts === undefined ? (
+                    <div>Loading...</div>
+                ) : (
+                    <PostList posts={posts} />
+                )}
             </section>
         </section>
     );
